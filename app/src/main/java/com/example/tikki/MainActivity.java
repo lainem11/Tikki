@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 kuolemaButton.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_pressed));
                 chichiButton.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_default));
                 tikkiButton.setEnabled(true);
-                enemyName = "mobile_model6.pt";
+                enemyName = "mobile_model7.pt";
             }
         });
 
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 kuolemaButton.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_default));
                 chichiButton.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.button_pressed));
                 tikkiButton.setEnabled(true);
-                enemyName = "mobile_model4.pt";
+                enemyName = "mobile_model6.pt";
             }
         });
     }

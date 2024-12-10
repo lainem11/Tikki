@@ -307,7 +307,10 @@ public class GameActivity extends AppCompatActivity {
                 play_bot_moves(); // Check for the next move
             }, randomDelay); // Delay in milliseconds
         }
-        raisePlayableCards();
+        if (game.currentPlayerIndex == humanPlayerIndex) {
+            raisePlayableCards();
+        }
+
     }
 
     private int getNormalDelay(int mean, int stdDev) {

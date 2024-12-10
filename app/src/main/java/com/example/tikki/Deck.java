@@ -12,8 +12,8 @@ public class Deck {
         String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"};
         cards = new ArrayList<>();
 
-        for (String suit : suits) {
-            for (String rank : ranks) {
+        for (String rank : ranks) {
+            for (String suit : suits) {
                 cards.add(new Cards(suit, rank));
             }
         }

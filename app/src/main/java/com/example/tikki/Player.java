@@ -146,9 +146,11 @@ public class Player {
     }
 
     private float[] chooseAction(Tikki tikki) {
+        Log.d("Choosing action", "Generating game state");
         int [] int_state = this.getState(tikki);
         long[] long_state = Arrays.stream(int_state).mapToLong(i -> i).toArray();
         Tensor state = Tensor.fromBlob(long_state,new long[]{1,n_inputs});
+        Log.d("Action", "Passing state to net");
         Tensor output = brains.forward(IValue.from(state)).toTensor();
         return output.getDataAsFloatArray();
     }
@@ -212,7 +214,7 @@ public class Player {
                     }
                 }
             }
-
+            Log.d("Looped thorugh valid cards", "About to remove card from hand");
             if (maxIndex != -1) {
                 return hand.remove(maxIndex);
             }
