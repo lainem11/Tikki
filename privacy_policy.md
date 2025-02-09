@@ -8,7 +8,7 @@ This privacy policy governs your use of the software application “Mökki Tikki
 The Application does not require the user to provide any personal information. Optinal player name can be provided, which is only used inside the Application. No data is stored or used outside the Application.
 
 ## Changes
-This Privacy Policy may be updated from time to time for any reason. We will notify you of any changes to our Privacy Policy by posting the new Privacy Policy at https://github.com/lainem11/Tikki/main/privacy_policy.md and update the "Last updated" date at the top of this Privacy Policy.
+This Privacy Policy may be updated from time to time for any reason. We will notify you of any changes to our Privacy Policy by posting the new Privacy Policy at [https://github.com/lainem11/Tikki/main/privacy_policy.md](https://github.com/lainem11/Tikki/blob/main/privacy_policy.md) and update the "Last updated" date at the top of this Privacy Policy.
 
 You are advised to review this Privacy Policy periodically for any changes, as continued use is deemed approval of all changes. Changes to this Privacy Policy are effective when they are posted on this page.
 
