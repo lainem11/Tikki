@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Tikki</string>
-    <string name="player1_speech">%1$s!</string>
-    <string name="winner_name">Winner: %1$s</string>
+    <string name="player1_speech">%1$s</string>
+    <string name="winner_name">Winner: \n%1$s!</string>
+    <string name="player_name">%1$s: </string>
 </resources>

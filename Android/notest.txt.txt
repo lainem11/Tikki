@@ -1,0 +1,3 @@
+handle card click callbacks in pileLayout
+card animation speeds
+multiplayer up to 4 with random actors?

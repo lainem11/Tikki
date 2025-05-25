@@ -15,12 +15,9 @@ class Categorical:
         self._batch_shape = probs_shape[:-1] if self.probs_dim > 1 else torch.Size()
         self._event_shape=torch.Size()
 
-    def set_probs_(self, probs):
-        self.probs = probs
-        self.logits = probs_to_logits(self.probs)
-
     def set_probs(self, probs):
-        self.probs = probs / probs.sum(-1, keepdim=True) 
+        tmp_probs = probs
+        self.probs = tmp_probs / tmp_probs.sum(-1, keepdim=True) 
         self.logits = probs_to_logits(self.probs)
 
     def sample(self, sample_shape=torch.Size()):
@@ -31,7 +28,7 @@ class Categorical:
         return samples_2d.reshape(sample_shape + self._batch_shape + self._event_shape)
 
     def log_prob(self, value):
-        value = value.long().unsqueeze(-1)
+        value = value.unsqueeze(-1)
         value, log_pmf = torch.broadcast_tensors(value, self.logits)
         value = value[..., :1]
         return log_pmf.gather(-1, value).squeeze(-1)
@@ -39,5 +36,7 @@ class Categorical:
     def entropy(self):
         min_real = torch.finfo(self.logits.dtype).min
         logits = torch.clamp(self.logits, min=min_real)
-        p_log_p = logits * self.probs
+        # Mask away forced play as it's entropy can't be changed
+        mask = (1-(self.probs == 1.0).sum(-1)).bool()
+        p_log_p = logits[mask,:] * self.probs[mask,:]
         return -p_log_p.sum(-1)

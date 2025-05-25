@@ -5,7 +5,7 @@ import java.util.*;
 public class Tikki {
     public List<Player> players;
     private Player humanPlayer;
-    private int maxRounds; // in practice +1 because of betting round
+    public int maxRounds; // in practice +1 because of betting round
     private int maxScore;
     private boolean matchStarted;
     private String roundSuit;
@@ -14,7 +14,7 @@ public class Tikki {
     public Map<Player, Integer> playerScores;
 
     public int currentPlayerIndex;
-    private int turnCount;
+    public int turnCount;
     private Deck deck;
     private Player matchStarter;
     private Player roundWinner;
@@ -244,8 +244,8 @@ public class Tikki {
                                 default:
                                     System.out.println("Error in bet");
                             }
-                            if (this.playerScores.get(playerFirstRound) < -10) {
-                                this.playerScores.put(playerFirstRound, -10);
+                            if (this.playerScores.get(playerFirstRound) < -5) {
+                                this.playerScores.put(playerFirstRound, -5);
                             }
                             if (this.playerScores.get(playerFirstRound) > 5) {
                                 this.playerScores.put(playerFirstRound, 5);

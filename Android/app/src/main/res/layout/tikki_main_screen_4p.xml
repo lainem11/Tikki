@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg_new"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <ImageButton
+        android:id="@+id/imageButtonRules"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/help_button"
+        android:contentDescription="Game Rules"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:elevation="16dp"
+        app:layout_constraintDimensionRatio="0.6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/wholescreen_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:elevation="20dp"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor40"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor60">
+
+        <ImageButton
+            android:id="@+id/new_match_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:visibility="invisible"
+            android:src="@drawable/next_button_enabled"
+            android:scaleType="fitCenter"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_bot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_top0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_top2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor_top3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.29"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hor76"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <TextView
+        android:id="@+id/text_game_end"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Game over!"
+        android:fontFamily="@font/brush_font"
+        android:gravity="center"
+        android:visibility="visible"
+        android:elevation="25dp"
+        android:textColor="@color/text_color7"
+        app:autoSizeTextType="uniform"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:shadowDy="10"
+        android:shadowDx="10"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor24"
+        app:layout_constraintBottom_toTopOf="@id/guideline_hor76"
+        />
+
+    <LinearLayout
+        android:id="@+id/pileLayout0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:elevation="5dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor60"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor76"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        />
+
+    <FrameLayout
+        android:id="@+id/cards_container0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor76"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_bot"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"/>
+
+
+    <View
+        android:id="@+id/pulseOverlay0"
+        android:layout_width="match_parent"
+        android:background="@drawable/turn_indicator_bot"
+        android:clickable="false"
+        android:elevation="5dp"
+        android:focusable="false"
+        android:visibility="visible"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="7"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <View
+        android:id="@+id/pulseOverlay1"
+        android:layout_width="match_parent"
+        android:background="@drawable/turn_indicator_top"
+        android:clickable="false"
+        android:elevation="5dp"
+        android:focusable="false"
+        android:visibility="visible"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="7"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <FrameLayout
+        android:id="@+id/cards_container2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="0dp"
+        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_top3"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor24"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        app:layout_constraintDimensionRatio="3"
+        android:layout_marginBottom="40dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/pileLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor24"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor40"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        />
+
+    <FrameLayout
+        android:id="@+id/cards_container1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="0dp"
+        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor24"
+        app:layout_constraintBottom_toTopOf="@id/pileLayout1"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_mid"
+        android:rotation="-90"
+        />
+
+    <LinearLayout
+        android:id="@+id/pileLayout1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor40"
+        app:layout_constraintBottom_toTopOf="@id/guideline_hor60"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_mid"
+        android:rotation="-90"
+        />
+
+    <FrameLayout
+        android:id="@+id/cards_container3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="0dp"
+        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor40"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor60"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_mid"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        app:layout_constraintDimensionRatio="2"
+        android:layout_marginTop="40dp"
+        android:rotation="90"
+        />
+
+    <LinearLayout
+        android:id="@+id/pileLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor24"
+        app:layout_constraintBottom_toTopOf="@id/cards_container3"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_mid"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        android:layout_marginBottom="40dp"
+        android:rotation="90"
+        />
+
+    <ImageView
+        android:id="@+id/topBoard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/wooden_sign"
+        android:scaleType="fitXY"
+        android:background="@null"
+        android:elevation="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_top2"
+        />
+
+    <ImageButton
+        android:id="@+id/buttonQuit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitStart"
+        android:background="@null"
+        android:elevation="15dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_top"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/total_score"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        app:autoSizeTextType="uniform"
+        android:text="Wins: 0/0"
+        android:fontFamily="@font/speech_font"
+        android:elevation="20dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="5"
+        android:shadowDy="5"
+        android:shadowDx="5"
+        android:gravity="end"
+        app:layout_constraintDimensionRatio="1.25"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonRules"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_top"
+        />
+
+    <LinearLayout
+        android:id="@+id/top_score"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@id/buttonQuit"
+        app:layout_constraintEnd_toStartOf="@id/total_score"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_top"
+        android:elevation="25dp"
+        android:clipChildren="false"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/text_player0Name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="TextView"
+            android:textColor="@color/text_color2"
+            app:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:shadowColor="#000000"
+            android:shadowRadius="5"
+            android:shadowDy="5"
+            android:shadowDx="5"
+            android:padding="5dp"
+            android:fontFamily="@font/speech_font"/>
+
+        <!-- Replace player0_score with a FrameLayout -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/player0_score"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:autoSizeTextType="uniform"
+                android:text="0"
+                android:fontFamily="@font/speech_font"
+                android:textColor="@color/text_color7"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="5"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:padding="5dp"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/damage_text0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+2"
+                android:textColor="@color/text_color1"
+                android:fontFamily="@font/speech_font"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="5"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:alpha="0.8"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/text_player1Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P2"
+            android:fontFamily="@font/speech_font"
+            android:textColor="@color/text_color2"
+            app:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:shadowColor="#000000"
+            android:shadowRadius="5"
+            android:shadowDy="5"
+            android:shadowDx="5"
+            android:padding="5dp"
+            android:maxLines="1"/>
+
+        <!-- Replace player0_score with a FrameLayout -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/player1_score"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:autoSizeTextType="uniform"
+                android:text="0"
+                android:fontFamily="@font/speech_font"
+                android:textColor="@color/text_color7"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="5"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:padding="5dp"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/damage_text1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+2"
+                android:textColor="@color/text_color5"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="5"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:alpha="0.8"/>
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/text_player2Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P2"
+            android:textColor="@color/text_color2"
+            app:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:shadowColor="#000000"
+            android:shadowRadius="5"
+            android:shadowDy="5"
+            android:shadowDx="5"
+            android:padding="5dp"
+            android:fontFamily="@font/speech_font"
+            android:maxLines="1"/>
+
+        <!-- Replace player0_score with a FrameLayout -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/player2_score"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:autoSizeTextType="uniform"
+                android:text="0"
+                android:fontFamily="@font/speech_font"
+                android:textColor="@color/text_color7"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="5"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:padding="5dp"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/damage_text2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+2"
+                android:textColor="@color/text_color1"
+                android:fontFamily="@font/speech_font"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="5"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:alpha="0.8"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/text_player3Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P3"
+            android:fontFamily="@font/speech_font"
+            android:textColor="@color/text_color2"
+            app:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:shadowColor="#000000"
+            android:shadowRadius="5"
+            android:shadowDy="5"
+            android:shadowDx="5"
+            android:padding="5dp"
+            android:maxLines="1"/>
+
+        <!-- Replace player0_score with a FrameLayout -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/player3_score"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:autoSizeTextType="uniform"
+                android:text="0"
+                android:fontFamily="@font/speech_font"
+                android:textColor="@color/text_color7"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="5"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:padding="5dp"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/damage_text3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+2"
+                android:textColor="@color/text_color5"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="5"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:alpha="0.8"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/bet_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor76"
+        app:layout_constraintTop_toTopOf="@+id/guideline_hor60"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right">
+
+        <!-- Original LinearLayout inside FrameLayout -->
+        <LinearLayout
+            android:id="@+id/bet_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageButton
+                android:id="@+id/pass_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/pass_button_disabled"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/win_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/win_button_disabled"
+                android:scaleType="fitCenter"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/two_win_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/two_win_button_disabled"
+                android:scaleType="fitCenter"
+                android:background="@null"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/player2_speech"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:fontFamily="@font/speech_font"
+        app:layout_constraintDimensionRatio="8"
+        android:textColor="@color/text_color2"
+        android:shadowColor="#000000"
+        android:shadowRadius="5"
+        android:shadowDy="5"
+        android:shadowDx="5"
+        android:elevation="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_hor24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/player0_speech"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""
+        android:fontFamily="@font/speech_font"
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        app:layout_constraintDimensionRatio="8"
+        android:textColor="@color/text_color2"
+        android:shadowColor="#000000"
+        android:shadowRadius="5"
+        android:shadowDy="5"
+        android:shadowDx="5"
+        android:elevation="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/cards_container0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/player1_speech"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""
+        android:fontFamily="@font/speech_font"
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        app:layout_constraintDimensionRatio="4"
+        android:textColor="@color/text_color2"
+        android:shadowColor="#000000"
+        android:shadowRadius="5"
+        android:shadowDy="5"
+        android:shadowDx="5"
+        android:elevation="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/cards_container1"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_mid"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/player3_speech"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""
+        android:fontFamily="@font/speech_font"
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        app:layout_constraintDimensionRatio="4"
+        android:textColor="@color/text_color2"
+        android:shadowColor="#000000"
+        android:shadowRadius="5"
+        android:shadowDy="5"
+        android:shadowDx="5"
+        android:elevation="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/cards_container3"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_mid" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
