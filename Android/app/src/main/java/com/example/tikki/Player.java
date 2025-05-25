@@ -8,20 +8,17 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
 
 import org.pytorch.Module;
 import org.pytorch.Tensor;
 import org.pytorch.IValue;
-//import org.pytorch.LiteModuleLoader;
 
 
 
 public class Player {
     public String name;
-    private List<Cards> hand;
-    private Module brains = null;
+    public List<Cards> hand;
+    public Module brains = null;
     private Deck deck;
     private int n_players = 2;
     private int round_n = 5;
@@ -118,7 +115,7 @@ public class Player {
 
         // Score vocabulary
         Map<Integer, Integer> scoreVocab = new HashMap<>();
-        for (int i = -10, index = 56; i <= 5; i++, index++) {
+        for (int i = -5, index = 56; i <= 5; i++, index++) {
             scoreVocab.put(i, index);
         }
 
@@ -145,10 +142,12 @@ public class Player {
         return state;
     }
 
-    private float[] chooseAction(Tikki tikki) {
+    public float[] chooseAction(Tikki tikki) {
         int [] int_state = this.getState(tikki);
         long[] long_state = Arrays.stream(int_state).mapToLong(i -> i).toArray();
+        Log.d("InputState", Arrays.toString(long_state));
         Tensor state = Tensor.fromBlob(long_state,new long[]{1,n_inputs});
+        Log.d("TensorShape", Arrays.toString(state.shape())); // Should be [1, 19]
         Tensor output = brains.forward(IValue.from(state)).toTensor();
         return output.getDataAsFloatArray();
     }
@@ -188,37 +187,28 @@ public class Player {
     public Cards playCard(Tikki tikki) {
         List<Cards> validCards = validCards(tikki);
 
-        if (brains == null) {
-            while (true) {
-                int index = new Random().nextInt(5);
-                if (index < hand.size() && validCards.contains(hand.get(index))) {
-                    return hand.remove(index);
+        int maxIndex = -1;
+        Cards bestCard = null;
+        float maxValue = -Float.MAX_VALUE;
+        float [] cardValues = chooseAction(tikki);
+        for (int i = 0; i < hand.size(); i++) {
+            Cards card = hand.get(i);
+            if (validCards.contains(card)) {
+                float cardValue = cardValues[cards.get(card.hashCode())];
+
+                if (cardValue > maxValue) {
+                    maxValue = cardValue;
+                    bestCard = card;
+                    maxIndex = i;
                 }
             }
-        } else {
-            int maxIndex = -1;
-            Cards bestCard = null;
-            float maxValue = -Float.MAX_VALUE;
-            float [] cardValues = chooseAction(tikki);
-            for (int i = 0; i < hand.size(); i++) {
-                Cards card = hand.get(i);
-                if (validCards.contains(card)) {
-                    float cardValue = cardValues[cards.get(card.hashCode())];
-
-                    if (cardValue > maxValue) {
-                        maxValue = cardValue;
-                        bestCard = card;
-                        maxIndex = i;
-                    }
-                }
-            }
-
-            if (maxIndex != -1) {
-                return hand.remove(maxIndex);
-            }
-
-            throw new IllegalStateException("No valid cards to play");
         }
+        if (maxIndex != -1) {
+            return hand.remove(maxIndex);
+        }
+
+        throw new IllegalStateException("No valid cards to play");
+
 
     }
 

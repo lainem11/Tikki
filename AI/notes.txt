@@ -1,8 +1,0 @@
-Agent_V1-2 changes:
-
-ASHA early stopping scheduler.
-Formal changes to winrate calculation and storing.
-Identifier string builder.
-
-best ai:
-actor_V1-2_lr6.08e-04,r4,lrbd0.90,g0.978591241041834,rbd0.97,hid30
