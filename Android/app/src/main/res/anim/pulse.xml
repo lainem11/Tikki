@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
-    <scale
+    <!-- Initial fade-in -->
+    <alpha
         android:duration="1000"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:fillAfter="true" />
+
+    <!-- Scaling Animation -->
+    <scale
+        android:duration="1200"
+        android:startOffset="1000"
         android:fromXScale="1.0"
         android:fromYScale="1.0"
-        android:toXScale="1.05"
-        android:toYScale="1.05"
+        android:toXScale="1.1"
+        android:toYScale="1.1"
         android:repeatCount="infinite"
         android:repeatMode="reverse"
         android:pivotY="50%"
         android:pivotX="50%" />
+
+    <!-- Alpha Animation -->
     <alpha
         android:duration="1000"
-        android:fromAlpha="0.5"
+        android:startOffset="1000"
+        android:fromAlpha="0.6"
         android:toAlpha="1.0"
         android:repeatCount="infinite"
         android:repeatMode="reverse" />

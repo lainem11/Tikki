@@ -3,5 +3,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="button_default">#b5ffb6</color>
-    <color name="button_pressed">#36980d</color>
+    <color name="button_pressed">#ffffb6</color>
+    <color name="gold_yellow">#ffd83b</color>
+    <color name="peach_orange">#ff903b</color>
+    <color name="text_color1">#456fd8</color>
+    <color name="text_color2">#f2eae7</color>
+    <color name="text_color3">#adafc2</color>
+    <color name="text_color4">#b21746</color>
+    <color name="text_color5">#456fd8</color>
+    <color name="text_color7">#d4b894</color>
+    <color name="point_add_color">#93bd8a</color>
+    <color name="point_reduce_color">#e0543f</color>
 </resources>

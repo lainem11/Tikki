@@ -9,6 +9,7 @@ class deck:
 
     def shuffle(self,seed):
         random.Random(seed).shuffle(self.cards)
+        #random.shuffle(self.cards)
 
     def draw(self):
         if not self.cards:
